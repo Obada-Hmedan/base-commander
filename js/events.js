@@ -45,3 +45,16 @@ export function scheduleEvents(period, constants, random = Math.random) {
 
   return [...byDay.values()].sort((a, b2) => a.day - b2.day);
 }
+
+// Mars level: a short scripted scenario (NOT archived data; shown as "simplified scenario").
+// It teaches two real ideas: signals take minutes to reach Mars, and dust storms can last a long time.
+export function marsEvents(constants) {
+  const s = constants.balance.script;
+  const events = [
+    { day: s.faultDay, kind: 'FAULT', scripted: true },
+    { day: s.dustWarnDay, kind: 'DUST_WARN', scripted: true },
+    ...s.dustDays.map((day) => ({ day, kind: 'DUST', scripted: true })),
+    { day: s.stormDay, kind: 'SEP', scripted: true },
+  ];
+  return events.sort((a, b) => a.day - b.day);
+}

@@ -3,16 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0b1020">
-  <meta name="description" content="لعبة تعليمية للأطفال: أدِر قاعدة على القطب الجنوبي للقمر ببيانات ناسا الحقيقية.">
+  <meta name="theme-color" content="#050814">
+  <meta name="description" content="لعبة تعليمية للأطفال: سافر للقمر والمريخ وأدِر قاعدتك ببيانات ناسا الحقيقية. A kids' game: fly to the Moon and Mars and run your base with real NASA data.">
   <title>قائد القاعدة</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚀%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/earthset.jpg">
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="js/main.js"></script>
 </head>
 <body>
-  <main id="app" aria-live="polite">
-    <p class="loading">…</p>
+  <main id="page" aria-live="polite">
+    <p class="loading">🚀</p>
   </main>
+  <!-- The game opens here, full screen, after Play is pressed. -->
+  <div id="stage" hidden>
+    <div id="app"></div>
+  </div>
   <noscript>هاي اللعبة بتحتاج JavaScript. / This game needs JavaScript.</noscript>
 </body>
 </html>

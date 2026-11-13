@@ -39,7 +39,9 @@ export function isNight(day, constants) {
 export function energyToday(state, constants) {
   const b = constants.balance;
   const site = b.sites[state.site];
-  const sun = isNight(state.day, constants) ? site.sunNight : site.sunDay;
+  let sun = isNight(state.day, constants) ? site.sunNight : site.sunDay;
+  // Mars dust storms block most sunlight.
+  if (eventsOn(state).some((ev) => ev.kind === 'DUST')) sun = Math.floor(sun * (b.dustSunFactor ?? 1));
   const reactor = state.reactor ? b.reactor.energyPerDay : 0;
   return { sun, reactor, battery: state.battery, total: sun + reactor + state.battery };
 }
@@ -94,9 +96,12 @@ export function planUsage(state, plan, constants) {
   const b = constants.balance;
   const energy = energyToday(state, constants);
   const upkeep = upkeepToday(state, constants);
-  const systems = systemCost(plan.systems, constants, plan.shelter);
+  const blocked = plan.blocked ?? [];
+  const active = { ...plan.systems };
+  for (const key of blocked) active[key] = false;
+  const systems = systemCost(active, constants, plan.shelter);
   const eva = plan.eva && !plan.shelter ? b.eva.energy : 0;
-  const used = upkeep.total + systems + eva;
+  const used = upkeep.total + systems + eva + (plan.extraCost ?? 0);
   return {
     energy,
     upkeep,
@@ -120,6 +125,9 @@ export function step(state, decision, constants) {
   const upkeep = upkeepToday(state, constants);
   const upkeepPaid = available >= upkeep.total;
   available = Math.max(0, available - upkeep.total);
+  // One-off repair cost chosen in an event (Mars: "fix it ourselves").
+  available = Math.max(0, available - (decision.extraCost ?? 0));
+  const blocked = decision.blocked ?? [];
 
   const eva = Boolean(decision.eva) && !shelter && canEva(state, constants) && available >= b.eva.energy;
   if (eva) available -= b.eva.energy;
@@ -128,6 +136,7 @@ export function step(state, decision, constants) {
   for (const key of ['lifeSupport', 'greenhouse', 'science']) {
     if (!want[key]) continue;
     if (key !== 'lifeSupport' && shelter) continue;
+    if (blocked.includes(key)) continue;
     const cost = b.systems[key];
     if (available >= cost) {
       ran[key] = true;
@@ -163,6 +172,7 @@ export function step(state, decision, constants) {
     shelter,
     eva,
     ran,
+    choice: decision.choice ?? null,
     upkeepPaid,
     energy: { available: energy.total, left: battery },
     deltas: {

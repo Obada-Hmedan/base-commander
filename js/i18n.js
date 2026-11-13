@@ -50,3 +50,8 @@ export function t(key, vars = {}) {
   if (typeof value !== 'string') return key;
   return value.replace(/\{(\w+)\}/g, (_, name) => vars[name] ?? `{${name}}`);
 }
+
+// Raw value (arrays/objects) for page content lists.
+export function raw(key) {
+  return key.split('.').reduce((obj, part) => obj?.[part], strings);
+}

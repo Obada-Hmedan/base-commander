@@ -6,6 +6,8 @@ A browser and mobile game for kids aged 7–12: run a base at the Moon's south p
 
 **NASA International Space Apps Challenge 2026, Palestine. Team MME.**
 
+**Play: https://obada-hmedan.github.io/base-commander/**
+
 ## التشغيل على جهازك · Run locally
 
 JSON files are loaded with `fetch`, so opening `index.html` directly will not work. Use a local server:
@@ -23,17 +25,19 @@ To test on a phone, connect it to the same Wi-Fi and open `http://<your-computer
 ```
 index.html          Entry page
 css/style.css       Mobile-first styles (RTL/LTR via logical properties)
-js/main.js          Boot: loads JSON and language
+js/main.js          Boot: loads JSON and language, opens the game stage
+js/page.js          Scrolling page: intro, about NASA, how to become an astronaut, sources
+js/ui.js            Game screens: site choice, dashboard, events, results
+js/engine.js        Game logic, no DOM (Moon and Mars use the same rules with different numbers)
+js/events.js        Real DONKI events -> Moon days; scripted Mars scenario
+js/cutscene.js      Animated launch / travel / landing "video" (SVG + CSS)
+js/scene.js         Animated picture of the base
+js/art.js           Original SVG drawings (logo, rocket, lander, astronaut)
 js/i18n.js          Arabic/English switching
-js/ui.js            Screens
-js/engine.js        Game logic, no DOM
-js/events.js        DONKI events -> game days
-js/quiz.js          Quiz with shuffled options
-i18n/ar.json        Arabic strings
-i18n/en.json        English strings
-data/               constants.json, donki-events.json, quiz-bank.json
-assets/             Images
-scripts/            fetch-donki.mjs
+i18n/               Arabic and English strings
+data/               constants.json (balance, sources, image credits), donki-events.json
+assets/img/         NASA photos (credits in data/constants.json)
+scripts/            fetch-donki.mjs (download archive), simulate.mjs (balance check)
 ```
 
 ## النشر · Deploy

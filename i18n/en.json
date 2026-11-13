@@ -1,61 +1,123 @@
 {
   "app": {
     "title": "Base Commander",
-    "tagline": "Run a base at the Moon's south pole. Every choice has a cost, and every number comes from real NASA data."
+    "tagline": "From the Moon to Mars"
   },
-  "lang": { "switch": "العربية" },
-  "start": {
-    "play": "Start",
-    "sources": "Where do the numbers come from?",
-    "marsLocked": "Mars 🔒 (finish the Moon first)"
+  "lang": {
+    "switch": "العربية"
+  },
+  "hero": {
+    "kicker": "A space game for heroes aged 7 to 12",
+    "intro": "You are the mission commander! Fly your crew to the Moon, build your base and keep the astronauts safe. Then travel on to Mars.",
+    "whatTitle": "What will you do?",
+    "what": [
+      {
+        "icon": "🚀",
+        "text": "Fly a rocket to the Moon"
+      },
+      {
+        "icon": "⚡",
+        "text": "Share out the base's energy"
+      },
+      {
+        "icon": "🫁",
+        "text": "Give the crew air, water and food"
+      },
+      {
+        "icon": "☀️",
+        "text": "Protect the crew from solar storms"
+      },
+      {
+        "icon": "🔴",
+        "text": "Travel on to Mars"
+      }
+    ],
+    "play": "Play",
+    "playHint": "Tap to start the journey",
+    "real": "All numbers, photos and storms come from real NASA data",
+    "scroll": "Or scroll down to learn about NASA ⬇️"
+  },
+  "cut": {
+    "skip": "Skip ⏭️",
+    "toMoon": {
+      "board": "The crew is ready! 4 astronauts climb aboard...",
+      "launch": "3... 2... 1... Liftoff! 🚀",
+      "space": "The trip to the Moon takes about 3 days",
+      "landing": "Landing at the Moon's south pole...",
+      "step": "We made it to the Moon! Let's build the base 🌙"
+    },
+    "toMars": {
+      "leave": "Goodbye, Moon! The crew is back on board...",
+      "space": "The trip to Mars is long: about 6 months!",
+      "landing": "Landing on the Red Planet...",
+      "step": "We made it to Mars! 🔴"
+    }
   },
   "site": {
     "title": "Where will you build your base?",
     "rim": {
-      "name": "Crater rim",
-      "pro": "Almost constant sunlight, even during the lunar night",
+      "name": "⛰️ Crater rim",
+      "pro": "Almost constant sunlight, even in the lunar night",
       "con": "Ice is far away, so water costs energy"
     },
     "shadow": {
-      "name": "Next to the shadowed crater",
+      "name": "🧊 Next to the shadowed crater",
       "pro": "Water ice nearby, so water is free",
-      "con": "Extreme cold and no sunlight during the lunar night"
+      "con": "Extreme cold and no sunlight in the lunar night"
     },
-    "choose": "Choose this site"
+    "choose": "Build here"
   },
   "hud": {
     "day": "Day {day} of {total}",
+    "sol": "Sol {day} of {total}",
     "dayTime": "☀️ Daytime",
     "night": "🌑 Lunar night",
-    "archive": "Real NASA solar data (archive): {period}",
+    "marsDay": "🔴 Mars",
+    "archive": "Real solar storms from NASA's archive: {period}",
+    "simplified": "Mars mission: a simplified scenario with real numbers",
     "life": "Life support",
     "dose": "Radiation",
     "battery": "Battery",
     "science": "Science points",
-    "doseHint": "Game limit {max}",
-    "starsHint": "Stars: {stars}"
+    "doseHint": "millisieverts · game limit {max} (simplified)",
+    "starsHint": "{stars}",
+    "scene": "Picture of the base"
   },
   "energy": {
     "title": "⚡ Today's energy",
     "have": "You have",
     "use": "You will use",
-    "left": "Saved in battery",
-    "sun": "Sun {n}",
-    "reactor": "Reactor {n}",
-    "stored": "Battery {n}",
+    "left": "To battery",
+    "sun": "☀️ Sun {n}",
+    "reactor": "⚛️ Reactor {n}",
+    "stored": "🔋 Battery {n}",
     "upkeep": "Water and heating: {n} ⚡",
+    "repair": "Repair: {n} ⚡",
     "notEnough": "Not enough energy"
   },
   "sys": {
     "title": "Turn on systems",
-    "lifeSupport": { "name": "🫁 Life support", "desc": "Oxygen and water for the crew" },
-    "greenhouse": { "name": "🌱 Greenhouse", "desc": "Fresh food, gives back 🫁" },
-    "science": { "name": "🔬 Experiment", "desc": "+{n} science points" },
-    "eva": { "name": "👩‍🚀 Go outside", "desc": "+{n} science, but radiation ×2" },
+    "lifeSupport": {
+      "name": "🫁 Life support",
+      "desc": "Oxygen and water for the crew"
+    },
+    "greenhouse": {
+      "name": "🌱 Greenhouse",
+      "desc": "Fresh food, gives back 🫁"
+    },
+    "science": {
+      "name": "🔬 Experiment",
+      "desc": "+{n} science points"
+    },
+    "eva": {
+      "name": "👩‍🚀 Go outside",
+      "desc": "+{n} science, but radiation ×2"
+    },
     "cost": "{n} ⚡",
-    "on": "On",
+    "on": "On ✅",
     "off": "Off",
     "pausedShelter": "Paused: crew is in the shelter",
+    "broken": "Broken: waiting for Earth's reply",
     "evaRest": "The crew is tired and needs a rest day"
   },
   "reactor": {
@@ -68,8 +130,17 @@
   },
   "endDay": "End day ⏭️",
   "event": {
-    "real": "Real NASA event",
+    "real": "Real event from NASA's archive",
+    "scripted": "Simplified game scenario",
     "date": "Happened on {date}",
+    "MOON_HELLO": {
+      "title": "🌙 Welcome to the Moon, Commander!",
+      "text": "Each day: turn on the systems you want, then press \"End day\". Careful: energy is limited, and every system uses ⚡."
+    },
+    "MARS_HELLO": {
+      "title": "🔴 Welcome to Mars, Commander!",
+      "text": "A day here is called a \"sol\". Earth is very far away, so you must rely on yourself. Keep the battery ready for emergencies!"
+    },
     "FLR": {
       "title": "☀️ Class {class} solar flare!",
       "text": "The Sun gave off a strong flash. Radiation goes up today."
@@ -80,11 +151,27 @@
     },
     "CME": {
       "title": "📡 Early warning: a solar cloud is coming!",
-      "text": "The Sun threw out a huge cloud at {speed} km/s. It may arrive in 1 to 3 days. Get ready!"
+      "text": "The Sun threw out a huge cloud at {speed} km per second. It may arrive in 1 to 3 days. Get ready!"
     },
     "CME_ARRIVAL": {
       "title": "🌩️ The solar cloud has arrived!",
-      "text": "The cloud we warned you about has reached the Moon."
+      "text": "The cloud we warned you about is here."
+    },
+    "DUST_WARN": {
+      "title": "📡 Warning: a dust storm is coming!",
+      "text": "In two days a dust storm will cover the Sun for 3 days. The solar panels will make very little energy. Save energy in the battery or buy the reactor!"
+    },
+    "DUST": {
+      "title": "🌪️ Dust storm!",
+      "text": "Dust is covering the Sun. The solar panels make only a quarter of their energy today."
+    },
+    "FAULT": {
+      "title": "🔧 The greenhouse broke down!",
+      "text": "The greenhouse water pump stopped. Will you ask Earth what to do, or fix it yourself?",
+      "wait": "📡 Wait for Earth's reply",
+      "waitCost": "The greenhouse stays off today",
+      "fix": "🔧 Fix it yourself",
+      "fixCost": "Costs {n} ⚡ today"
     },
     "shelter": "🛡️ Go to the shelter",
     "shelterCost": "Dose drops to {dose}, but science and the greenhouse stop today",
@@ -92,30 +179,235 @@
     "continueCost": "Radiation goes up by {dose}",
     "ok": "Got it 👍"
   },
+  "fact": {
+    "title": "💡 In real life...",
+    "source": "Source",
+    "MOON_HELLO": "On the Moon's surface, radiation is about 1.369 millisieverts per day. That is 2.6 times more than on the space station!",
+    "MARS_HELLO": "A sol (a Mars day) lasts 24 hours and 39 minutes. Radiation on the surface of Mars is about 0.64 millisieverts per day.",
+    "FLR": "NASA records every solar flare in a database called DONKI, and this flare is one of them.",
+    "SEP": "NASA does not let an astronaut take more than 250 millisieverts from one solar event. That is why spacecraft have a storm shelter.",
+    "CME": "Mission control watches the Sun every day and warns astronauts before a storm arrives.",
+    "CME_ARRIVAL": "NASA designs space habitats with a built-in storm shelter where the crew can hide.",
+    "DUST_WARN": "Dust storms on Mars can last weeks or months! That is why NASA is developing a small reactor that makes 40 kilowatts without sunlight.",
+    "DUST": "Dust storms on Mars can last weeks or months and cover the whole planet.",
+    "FAULT": "A message from Mars to Earth takes 3 to 22 minutes, and the answer takes just as long. From the Moon it takes only 1.3 seconds!",
+    "NIGHT": "Night on the Moon lasts 14.5 Earth days. That is why NASA is developing a small reactor that makes 40 kilowatts without sunlight."
+  },
   "night": {
     "title": "🌑 The lunar night is coming!",
-    "text": "In two days a night begins that lasts 14.5 Earth days, and your site gets no sunlight at night. The battery alone is not enough.",
+    "text": "In two days a long night begins, and your site gets no sunlight at night. The battery alone is not enough.",
     "buy": "⚛️ Buy the reactor ({cost} points)",
     "cant": "You don't have enough points for the reactor. Save energy in the battery and turn off what you don't need.",
-    "ok": "Got it"
+    "ok": "Got it 👍"
   },
   "end": {
-    "success": "🎉 The crew finished 30 days and came home safely!",
-    "life": "🚀 The mission returned safely to Earth",
+    "success": "🎉 The crew completed the mission!",
+    "life": "🚀 The crew came home safely, but early",
     "lifeWhy": "Life support ran out. The crew needed more oxygen, water and food than the base could make.",
-    "radiation": "🚀 The mission returned safely to Earth",
-    "radiationWhy": "The crew collected a high radiation dose. NASA planners would have sent them to the shelter during storms.",
-    "stars": "Your stars",
+    "radiation": "🚀 The crew came home safely, but early",
+    "radiationWhy": "The crew collected too much radiation, so mission control brought them home to keep them healthy.",
     "science": "You collected {n} science points",
+    "days": "You lasted {n} days",
     "storms": "Your choices during storms",
     "stormShelter": "Day {day}: went to the shelter 🛡️",
     "stormStay": "Day {day}: kept working ☢️",
-    "noStorms": "No storms in this round",
-    "again": "Play again 🔁",
-    "home": "Home screen"
+    "noStorms": "No dangerous storms in this round",
+    "toMars": "🚀 Launch to Mars!",
+    "again": "🔁 Replay the Moon mission",
+    "home": "Home page"
+  },
+  "final": {
+    "title": "📋 Commander's report",
+    "intro": "You finished the journey from the Moon to Mars! Here is how you did:",
+    "moon": "🌙 Moon",
+    "mars": "🔴 Mars",
+    "total": "Your stars: {n} of 6",
+    "rank0": "Astronaut in training",
+    "rank1": "Brave astronaut",
+    "rank2": "Skilled base commander",
+    "rank3": "Legendary commander! 🏆",
+    "tipsTitle": "What should you have done?",
+    "tips": {
+      "shelterGood": "✅ You sent the crew to the shelter during storms. That is exactly what NASA planners do!",
+      "shelterBad": "🛡️ During a solar storm, send the crew to the shelter. You lose a day of science, but you protect their health. NASA's limit is 250 millisieverts per storm.",
+      "lifeGood": "✅ You kept the crew's air, water and food going. Great work!",
+      "lifeLow": "🫁 Keep life support on every day, and run the greenhouse when you have energy. The crew needs oxygen, water and food every day.",
+      "nightPlan": "🌑 Before the lunar night, save energy in the battery or buy the reactor. The night lasts 14.5 days!",
+      "dustGood": "✅ You got ready for the dust storm before it arrived. Real commander planning!",
+      "dustPlan": "🌪️ When a dust storm warning arrives, pause experiments and save energy in the battery, or buy the reactor.",
+      "scienceGood": "✅ You collected lots of science without risking the crew. That is the right balance!",
+      "scienceLow": "🔬 On calm days, run experiments and go outside. That earns more stars.",
+      "evaStorm": "👩‍🚀 Don't send the crew outside during a storm: radiation outside is doubled.",
+      "faultWait": "📡 You waited for Earth's reply. On Mars the answer is slow, so sometimes the crew must fix things alone.",
+      "faultFix": "✅ You fixed the problem yourself. Mars crews must rely on themselves because Earth is far away."
+    },
+    "next": "Next: learn about NASA ⬇️",
+    "again": "🔁 Play from the start"
+  },
+  "nasa": {
+    "kicker": "Meet",
+    "title": "NASA: the US space agency",
+    "intro": "NASA was founded in 1958. Its job is to explore space, study Earth, the Sun and the planets, and send astronauts and robots to places no one has reached before.",
+    "achTitle": "NASA's most famous achievements",
+    "ach": [
+      {
+        "year": "1969",
+        "title": "First humans on the Moon",
+        "text": "On the Apollo 11 mission, astronauts walked on the Moon for the first time. Between 1969 and 1972, 12 astronauts walked on it.",
+        "img": "apollo11.jpg",
+        "credit": "NASA"
+      },
+      {
+        "year": "2000",
+        "title": "A home in space",
+        "text": "Since November 2000, astronauts have lived on the International Space Station every single day, without a break!",
+        "img": "spacewalk.jpg",
+        "credit": "NASA"
+      },
+      {
+        "year": "2021",
+        "title": "A robot and a helicopter on Mars",
+        "text": "The Perseverance rover landed on Mars with Ingenuity: the first aircraft to fly on another planet.",
+        "img": "mars.jpg",
+        "credit": "NASA/JPL-Caltech/MSSS"
+      },
+      {
+        "year": "2022",
+        "title": "An eye on the first stars",
+        "text": "The James Webb Space Telescope sent its first color images. It sees stars and galaxies that are very, very far away.",
+        "img": "webb.jpg",
+        "credit": "NASA, ESA, CSA, STScI"
+      },
+      {
+        "year": "2026",
+        "title": "Back to the Moon",
+        "text": "On the Artemis II mission, 4 astronauts flew around the Moon and photographed Earth setting behind it.",
+        "img": "earthset.jpg",
+        "credit": "NASA"
+      }
+    ],
+    "supportTitle": "How does NASA look after astronauts?",
+    "support": [
+      {
+        "icon": "🏊",
+        "title": "Underwater training",
+        "text": "Astronauts train in their suits inside a giant pool, because floating in water feels like floating in space."
+      },
+      {
+        "icon": "🎧",
+        "title": "Mission control",
+        "text": "A team on Earth watches the mission day and night and warns the crew about solar storms."
+      },
+      {
+        "icon": "🏃",
+        "title": "Exercise every day",
+        "text": "On the space station, the crew exercises about two hours a day to keep muscles and bones strong."
+      },
+      {
+        "icon": "💧",
+        "title": "Clean water",
+        "text": "The space station cleans and reuses 98% of its water."
+      },
+      {
+        "icon": "🛡️",
+        "title": "Storm shelter",
+        "text": "Spacecraft and habitats have a protected place where the crew hides during solar storms."
+      },
+      {
+        "icon": "🥗",
+        "title": "Fresh food",
+        "text": "Astronauts have grown lettuce in space and eaten it, using a device called Veggie."
+      }
+    ],
+    "trainingCaption": "An astronaut getting ready for underwater training"
+  },
+  "astro": {
+    "kicker": "Your turn",
+    "title": "How do you become an astronaut?",
+    "intro": "Every astronaut was once a child who looked up at the sky and asked questions. You can start today!",
+    "nowTitle": "6 things you can do right now",
+    "now": [
+      {
+        "icon": "❓",
+        "title": "Ask lots of questions",
+        "text": "Why is the sky black in space? How does a rocket fly? Scientists always start with a question."
+      },
+      {
+        "icon": "🔢",
+        "title": "Love science and math",
+        "text": "They are the language of space. Every rocket flew because someone got the math right."
+      },
+      {
+        "icon": "📚",
+        "title": "Read and learn languages",
+        "text": "Astronauts work with people from all over the world, so they learn other languages."
+      },
+      {
+        "icon": "🏊",
+        "title": "Play sports and learn to swim",
+        "text": "Astronauts must be healthy, and they must pass a swimming test."
+      },
+      {
+        "icon": "🤝",
+        "title": "Work in a team",
+        "text": "Nobody succeeds alone in space. Help your friends and listen to their ideas."
+      },
+      {
+        "icon": "💪",
+        "title": "Never give up",
+        "text": "In 2021 more than 12,000 people applied to NASA, and it chose only 10. The ones who made it tried many times."
+      }
+    ],
+    "laterTitle": "When you grow up: what does NASA ask for?",
+    "later": [
+      "🎓 A master's degree in science, engineering, math or medicine",
+      "🧑‍🔬 3 years of work experience, or 1,000 hours flying as a jet pilot in command",
+      "❤️ Passing the medical exam for long space flights",
+      "🧑‍🚀 Then about two years of training: swimming, flying, robotics and spacewalks"
+    ],
+    "worldTitle": "Space is for the whole world",
+    "world": "NASA chooses American astronauts, but many countries have space agencies. In 2023 Emirati astronaut Sultan Al Neyadi lived on the space station for 6 months and did a spacewalk, and Rayyanah Barnawi reached the station as the first Saudi woman astronaut.",
+    "helpTitle": "How can NASA help you right now?",
+    "help": [
+      {
+        "name": "NASA Space Place",
+        "url": "https://spaceplace.nasa.gov/",
+        "text": "Games, experiments and simple space explanations"
+      },
+      {
+        "name": "NASA Kids' Club",
+        "url": "https://www.nasa.gov/learning-resources/nasa-kids-club/",
+        "text": "Games and pictures for kids"
+      },
+      {
+        "name": "NASA Learning Resources",
+        "url": "https://www.nasa.gov/learning-resources/",
+        "text": "Lessons and activities for students and teachers"
+      },
+      {
+        "name": "NASA Space Apps Challenge",
+        "url": "https://www.spaceappschallenge.org/",
+        "text": "A worldwide contest where you solve real problems with NASA data, just like we did!"
+      }
+    ],
+    "cta": "🚀 Ready? Play again"
+  },
+  "sources": {
+    "title": "Where do the numbers come from?",
+    "intro": "Every science number in the game has a source. Numbers marked \"simplified\" are game numbers we made easier for kids.",
+    "dataTitle": "Data",
+    "donki": "The solar storms in the game are real, from the NASA DONKI archive (CCMC). They are stored data, not live, and each event shows its real date.",
+    "imgTitle": "Images",
+    "imgNote": "All photos come from NASA's image library. The animations and the logo are our own drawings.",
+    "aiTitle": "Use of AI",
+    "aiText": "We used an AI assistant (Claude) to help write the code and text. No AI-generated images are used.",
+    "disclaimer": "A student project by Team MME for the NASA Space Apps Challenge 2026. This project is not affiliated with or endorsed by NASA."
   },
   "common": {
     "back": "Back",
-    "comingSoon": "Under construction"
+    "close": "✖ Exit"
+  },
+  "unit": {
+    "msv": "{n} millisieverts"
   }
 }

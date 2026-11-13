@@ -6,13 +6,33 @@
     "tutorialDays": 3,
     "crew": 4,
     "sites": {
-      "rim": { "sunDay": 9, "sunNight": 7, "heatingNight": 1, "waterCost": 2 },
-      "shadow": { "sunDay": 12, "sunNight": 0, "heatingNight": 2, "waterCost": 0 }
+      "rim": {
+        "sunDay": 9,
+        "sunNight": 7,
+        "heatingNight": 1,
+        "waterCost": 2
+      },
+      "shadow": {
+        "sunDay": 12,
+        "sunNight": 0,
+        "heatingNight": 2,
+        "waterCost": 0
+      }
     },
-    "systems": { "lifeSupport": 3, "greenhouse": 2, "science": 2 },
+    "systems": {
+      "lifeSupport": 3,
+      "greenhouse": 2,
+      "science": 2
+    },
     "batteryCapacity": 20,
     "unpaidUpkeepPenalty": 10,
-    "life": { "start": 100, "max": 100, "dailyUse": 3, "greenhouseBonus": 2, "unpoweredPenalty": 20 },
+    "life": {
+      "start": 100,
+      "max": 100,
+      "dailyUse": 3,
+      "greenhouseBonus": 2,
+      "unpoweredPenalty": 20
+    },
     "radiation": {
       "surfacePerDay": 1.369,
       "flareM": 20,
@@ -25,11 +45,195 @@
       "careerLimit": 600,
       "perEventLimit": 250
     },
-    "science": { "experiment": 10, "eva": 15, "stars": [120, 180, 240] },
-    "reactor": { "cost": 40, "energyPerDay": 6 },
+    "science": {
+      "experiment": 10,
+      "eva": 15,
+      "stars": [
+        120,
+        180,
+        240
+      ]
+    },
+    "reactor": {
+      "cost": 40,
+      "energyPerDay": 6
+    },
     "nightWarningDay": 14,
-    "cmeDelayDays": [1, 3],
+    "cmeDelayDays": [
+      1,
+      3
+    ],
     "maxEventsPerRound": 8,
-    "eva": { "energy": 2, "restDays": 1 }
-  }
+    "eva": {
+      "energy": 2,
+      "restDays": 1
+    }
+  },
+  "mars": {
+    "days": 10,
+    "nightStartsDay": 99,
+    "tutorialDays": 1,
+    "crew": 4,
+    "sites": {
+      "mars": {
+        "sunDay": 8,
+        "sunNight": 8,
+        "heatingNight": 0,
+        "waterCost": 1
+      }
+    },
+    "systems": {
+      "lifeSupport": 3,
+      "greenhouse": 2,
+      "science": 2
+    },
+    "batteryCapacity": 20,
+    "unpaidUpkeepPenalty": 10,
+    "dustSunFactor": 0.25,
+    "life": {
+      "start": 100,
+      "max": 100,
+      "dailyUse": 4,
+      "greenhouseBonus": 2,
+      "unpoweredPenalty": 25
+    },
+    "radiation": {
+      "surfacePerDay": 0.64,
+      "flareM": 20,
+      "flareX": 60,
+      "sep": 80,
+      "cmeArrival": 30,
+      "shelterFactor": 0.1,
+      "evaFactor": 2,
+      "missionBudget": 150,
+      "careerLimit": 600,
+      "perEventLimit": 250
+    },
+    "science": {
+      "experiment": 10,
+      "eva": 15,
+      "stars": [
+        40,
+        60,
+        80
+      ]
+    },
+    "reactor": {
+      "cost": 40,
+      "energyPerDay": 6
+    },
+    "nightWarningDay": -1,
+    "cmeDelayDays": [
+      1,
+      3
+    ],
+    "maxEventsPerRound": 8,
+    "eva": {
+      "energy": 2,
+      "restDays": 1
+    },
+    "script": {
+      "faultDay": 2,
+      "faultFixCost": 3,
+      "dustWarnDay": 3,
+      "dustDays": [
+        5,
+        6,
+        7
+      ],
+      "stormDay": 9
+    }
+  },
+  "sources": {
+    "donki": {
+      "name": "NASA DONKI (CCMC)",
+      "url": "https://ccmc.gsfc.nasa.gov/tools/DONKI/"
+    },
+    "ochmo": {
+      "name": "NASA OCHMO – Radiation Protection (NASA-STD-3001)",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/03/radiation-protection-technical-brief-ochmo.pdf"
+    },
+    "shelter": {
+      "name": "NASA NTRS 20250006168 – Radiation & storm shelters",
+      "url": "https://ntrs.nasa.gov/api/citations/20250006168/downloads/ASCEND%20Simonsen%20draft%201.pdf"
+    },
+    "lunarDose": {
+      "name": "Zhang et al. 2020, Science Advances (Chang'e-4)",
+      "url": "https://doi.org/10.1126/sciadv.aaz1334"
+    },
+    "fsp": {
+      "name": "NASA Fission Surface Power – NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/20220014952/downloads/Tofil%20ASCEND%20Oct%202022%20Rev%20C.pdf"
+    },
+    "diviner": {
+      "name": "Diviner Lunar Radiometer (LRO)",
+      "url": "https://www.diviner.ucla.edu/science"
+    },
+    "eclss": {
+      "name": "NASA ISS ECLSS fact sheet",
+      "url": "https://nasa.gov/wp-content/uploads/2015/02/g-583661_smith_cs20.pdf"
+    },
+    "veggie": {
+      "name": "NASA Veggie – NTRS 20160005059",
+      "url": "https://ntrs.nasa.gov/api/citations/20160005059/downloads/20160005059.pdf"
+    },
+    "rad": {
+      "name": "Curiosity RAD results (Scientific American)",
+      "url": "https://www.scientificamerican.com/article/radiation-on-mars-managea/"
+    },
+    "comm": {
+      "name": "NASA NTRS 20220013418 – Mars communication delays",
+      "url": "https://ntrs.nasa.gov/api/citations/20220013418/downloads/ASCEND-Communication%20Delays%2C%20Disruptions%2C%20and%20Blackouts%20for%20Crewed%20Mars%20Missions.pdf"
+    },
+    "exercise": {
+      "name": "NASA – Astronaut Exercise",
+      "url": "https://www.nasa.gov/missions/station/iss-research/astronaut-exercise"
+    },
+    "water": {
+      "name": "Space.com – ISS 98% water recovery (NASA, 2023)",
+      "url": "https://www.space.com/astronaut-pee-iss-water-recycling-98-percent-milestone"
+    },
+    "astronaut": {
+      "name": "NASA – Astronaut Requirements",
+      "url": "https://www.nasa.gov/humans-in-space/astronauts/astronaut-requirements/"
+    }
+  },
+  "images": [
+    {
+      "file": "earthset.jpg",
+      "id": "art002e021278",
+      "title": "Earthset from Orion, Artemis II (6 April 2026)",
+      "credit": "NASA"
+    },
+    {
+      "file": "apollo11.jpg",
+      "id": "AS11-40-5903",
+      "title": "Buzz Aldrin on the Moon, Apollo 11 (20 July 1969)",
+      "credit": "NASA"
+    },
+    {
+      "file": "mars.jpg",
+      "id": "PIA24542",
+      "title": "Perseverance's selfie with Ingenuity (6 April 2021)",
+      "credit": "NASA/JPL-Caltech/MSSS"
+    },
+    {
+      "file": "webb.jpg",
+      "id": "carina_nebula",
+      "title": "Cosmic Cliffs in the Carina Nebula, James Webb Space Telescope (2022)",
+      "credit": "NASA, ESA, CSA, STScI"
+    },
+    {
+      "file": "training.jpg",
+      "id": "JSC2002-E-39735",
+      "title": "Spacewalk training at the Neutral Buoyancy Laboratory (2002)",
+      "credit": "NASA"
+    },
+    {
+      "file": "spacewalk.jpg",
+      "id": "ISS016-E-017499",
+      "title": "Peggy Whitson during a spacewalk, Expedition 16 (18 December 2007)",
+      "credit": "NASA"
+    }
+  ]
 }
