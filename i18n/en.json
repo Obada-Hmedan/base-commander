@@ -3,9 +3,7 @@
     "title": "Base Commander",
     "tagline": "Run a base at the Moon's south pole. Every choice has a cost, and every number comes from real NASA data."
   },
-  "lang": {
-    "switch": "العربية"
-  },
+  "lang": { "switch": "العربية" },
   "start": {
     "play": "Start",
     "sources": "Where do the numbers come from?",
@@ -24,6 +22,97 @@
       "con": "Extreme cold and no sunlight during the lunar night"
     },
     "choose": "Choose this site"
+  },
+  "hud": {
+    "day": "Day {day} of {total}",
+    "dayTime": "☀️ Daytime",
+    "night": "🌑 Lunar night",
+    "archive": "Real NASA solar data (archive): {period}",
+    "life": "Life support",
+    "dose": "Radiation",
+    "battery": "Battery",
+    "science": "Science points",
+    "doseHint": "Game limit {max}",
+    "starsHint": "Stars: {stars}"
+  },
+  "energy": {
+    "title": "⚡ Today's energy",
+    "have": "You have",
+    "use": "You will use",
+    "left": "Saved in battery",
+    "sun": "Sun {n}",
+    "reactor": "Reactor {n}",
+    "stored": "Battery {n}",
+    "upkeep": "Water and heating: {n} ⚡",
+    "notEnough": "Not enough energy"
+  },
+  "sys": {
+    "title": "Turn on systems",
+    "lifeSupport": { "name": "🫁 Life support", "desc": "Oxygen and water for the crew" },
+    "greenhouse": { "name": "🌱 Greenhouse", "desc": "Fresh food, gives back 🫁" },
+    "science": { "name": "🔬 Experiment", "desc": "+{n} science points" },
+    "eva": { "name": "👩‍🚀 Go outside", "desc": "+{n} science, but radiation ×2" },
+    "cost": "{n} ⚡",
+    "on": "On",
+    "off": "Off",
+    "pausedShelter": "Paused: crew is in the shelter",
+    "evaRest": "The crew is tired and needs a rest day"
+  },
+  "reactor": {
+    "buy": "⚛️ Buy a small reactor ({cost} science points)",
+    "owned": "⚛️ Reactor running: +{n} ⚡ every day",
+    "need": "⚛️ The reactor needs {cost} science points"
+  },
+  "shelter": {
+    "active": "🛡️ The crew is in the shelter today"
+  },
+  "endDay": "End day ⏭️",
+  "event": {
+    "real": "Real NASA event",
+    "date": "Happened on {date}",
+    "FLR": {
+      "title": "☀️ Class {class} solar flare!",
+      "text": "The Sun gave off a strong flash. Radiation goes up today."
+    },
+    "SEP": {
+      "title": "⚠️ Solar particle storm!",
+      "text": "Fast particles are coming from the Sun. This is the most dangerous thing for astronauts."
+    },
+    "CME": {
+      "title": "📡 Early warning: a solar cloud is coming!",
+      "text": "The Sun threw out a huge cloud at {speed} km/s. It may arrive in 1 to 3 days. Get ready!"
+    },
+    "CME_ARRIVAL": {
+      "title": "🌩️ The solar cloud has arrived!",
+      "text": "The cloud we warned you about has reached the Moon."
+    },
+    "shelter": "🛡️ Go to the shelter",
+    "shelterCost": "Dose drops to {dose}, but science and the greenhouse stop today",
+    "continue": "🔬 Keep working",
+    "continueCost": "Radiation goes up by {dose}",
+    "ok": "Got it 👍"
+  },
+  "night": {
+    "title": "🌑 The lunar night is coming!",
+    "text": "In two days a night begins that lasts 14.5 Earth days, and your site gets no sunlight at night. The battery alone is not enough.",
+    "buy": "⚛️ Buy the reactor ({cost} points)",
+    "cant": "You don't have enough points for the reactor. Save energy in the battery and turn off what you don't need.",
+    "ok": "Got it"
+  },
+  "end": {
+    "success": "🎉 The crew finished 30 days and came home safely!",
+    "life": "🚀 The mission returned safely to Earth",
+    "lifeWhy": "Life support ran out. The crew needed more oxygen, water and food than the base could make.",
+    "radiation": "🚀 The mission returned safely to Earth",
+    "radiationWhy": "The crew collected a high radiation dose. NASA planners would have sent them to the shelter during storms.",
+    "stars": "Your stars",
+    "science": "You collected {n} science points",
+    "storms": "Your choices during storms",
+    "stormShelter": "Day {day}: went to the shelter 🛡️",
+    "stormStay": "Day {day}: kept working ☢️",
+    "noStorms": "No storms in this round",
+    "again": "Play again 🔁",
+    "home": "Home screen"
   },
   "common": {
     "back": "Back",

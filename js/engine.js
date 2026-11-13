@@ -81,6 +81,32 @@ function eventDose(event, r) {
   return 0; // CME warnings carry no dose themselves
 }
 
+// Dose the crew would get today with a given choice (shown on buttons before choosing).
+export function previewDose(state, constants, { shelter = false, eva = false } = {}) {
+  const r = constants.balance.radiation;
+  const raw = r.surfacePerDay + eventsOn(state).reduce((sum, e) => sum + eventDose(e, r), 0);
+  const factor = shelter ? r.shelterFactor : eva ? r.evaFactor : 1;
+  return Math.round(raw * factor * 10) / 10;
+}
+
+// Energy plan for the dashboard: what the chosen systems would cost today.
+export function planUsage(state, plan, constants) {
+  const b = constants.balance;
+  const energy = energyToday(state, constants);
+  const upkeep = upkeepToday(state, constants);
+  const systems = systemCost(plan.systems, constants, plan.shelter);
+  const eva = plan.eva && !plan.shelter ? b.eva.energy : 0;
+  const used = upkeep.total + systems + eva;
+  return {
+    energy,
+    upkeep,
+    used,
+    left: Math.max(0, energy.total - used),
+    toBattery: Math.min(b.batteryCapacity, Math.max(0, energy.total - used)),
+    fits: used <= energy.total,
+  };
+}
+
 export function step(state, decision, constants) {
   if (state.over) return state;
   const b = constants.balance;
