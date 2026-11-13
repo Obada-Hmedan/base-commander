@@ -1,0 +1,32 @@
+{
+  "app": {
+    "title": "Base Commander",
+    "tagline": "Run a base at the Moon's south pole. Every choice has a cost, and every number comes from real NASA data."
+  },
+  "lang": {
+    "switch": "العربية"
+  },
+  "start": {
+    "play": "Start",
+    "sources": "Where do the numbers come from?",
+    "marsLocked": "Mars 🔒 (finish the Moon first)"
+  },
+  "site": {
+    "title": "Where will you build your base?",
+    "rim": {
+      "name": "Crater rim",
+      "pro": "Almost constant sunlight, even during the lunar night",
+      "con": "Ice is far away, so water costs energy"
+    },
+    "shadow": {
+      "name": "Next to the shadowed crater",
+      "pro": "Water ice nearby, so water is free",
+      "con": "Extreme cold and no sunlight during the lunar night"
+    },
+    "choose": "Choose this site"
+  },
+  "common": {
+    "back": "Back",
+    "comingSoon": "Under construction"
+  }
+}

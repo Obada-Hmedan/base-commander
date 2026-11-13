@@ -1,0 +1,26 @@
+{
+  "_note": "Starter values copied from PRD section 5.6. Replace this file with the team's full constants.json (25 sourced values). The 'balance' block is simplified game tuning, not science.",
+  "balance": {
+    "days": 30,
+    "nightStartsDay": 16,
+    "crew": 4,
+    "sites": {
+      "rim": { "sunDay": 9, "sunNight": 7, "heatingNight": 1, "waterCost": 2 },
+      "shadow": { "sunDay": 12, "sunNight": 0, "heatingNight": 2, "waterCost": 0 }
+    },
+    "systems": { "lifeSupport": 3, "greenhouse": 2, "science": 2 },
+    "batteryCapacity": 20,
+    "life": { "start": 100, "dailyUse": 3, "greenhouseBonus": 2, "unpoweredPenalty": 20 },
+    "radiation": {
+      "surfacePerDay": 1.369,
+      "flareM": 20,
+      "flareX": 60,
+      "sep": 80,
+      "shelterFactor": 0.1,
+      "evaFactor": 2,
+      "missionBudget": 150
+    },
+    "science": { "experiment": 10, "eva": 15, "stars": [50, 100, 150] },
+    "reactor": { "cost": 40, "energyPerDay": 6 }
+  }
+}
